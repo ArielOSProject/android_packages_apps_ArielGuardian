@@ -11,7 +11,12 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_MODULE_CLASS := APPS
-
-LOCAL_SRC_FILES := app-release-unsigned.apk
+ifneq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
+  # eng builds use debug ArielGuardian app
+  LOCAL_SRC_FILES := app-debug.apk
+else
+  # userdebug builds use release ArielGuardian app
+  LOCAL_SRC_FILES := app-release.apk
+endif
 
 include $(BUILD_PREBUILT)
