@@ -10,6 +10,8 @@ LOCAL_CERTIFICATE := platform
 
 LOCAL_PRIVILEGED_MODULE := true
 
+LOCAL_SYSTEM_EXT_MODULE := true
+
 LOCAL_MODULE_CLASS := APPS
 ifneq (,$(filter eng,$(TARGET_BUILD_VARIANT)))
   # eng builds use debug ArielGuardian app
